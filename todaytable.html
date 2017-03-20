@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>오늘 시간표</title>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript">
+		var today=new Date();
+		var day=today.getDay();
+		var hour=today.getHours();
+		var dep;
+		if (hour>=17) {
+			day=day+1;
+			if (day==7) {
+				day=0;
+			}
+		}
+
+		function tableChange(today,day,hour){
+			var dep=$("#sel option:selected").val();
+
+
+			if (day==1 || day==0 || day==6) { //토일월
+					if (dep==1){
+						$("#1stClass").text("중국어");
+						$("#2ndClass").text("중국어");
+						$("#3rdClass").text("중국어");
+						$("#4thClass").text("중국어");
+						$("#5thClass").text("중국어");
+						$("#6thClass").text("중국어");
+						$("#7thClass").text("중국어");
+					}
+					else if (dep==2){
+						$("#1stClass").text("라틴어");
+						$("#2ndClass").text("라틴어");
+						$("#3rdClass").text("라틴어");
+						$("#4thClass").text("라틴어");
+						$("#5thClass").text("라틴어");
+						$("#6thClass").text("라틴어");
+						$("#7thClass").text("라틴어");
+					}
+					else if (dep==3){
+						$("#1stClass").text("미적분");
+						$("#2ndClass").text("자바");
+						$("#3rdClass").text("자바");
+						$("#4thClass").text("네트워크 보안");
+						$("#5thClass").text("네트워크 보안");
+						$("#6thClass").text("취업 실묵 국어");
+						$("#7thClass").text("일본어");
+					}
+					else if (dep==4){
+						$("#1stClass").text("정보통신망 실무");
+						$("#2ndClass").text("정보통신망 실무");
+						$("#3rdClass").text("미적분");
+						$("#4thClass").text("토익 일반");
+						$("#5thClass").text("서버구축 실무");
+						$("#6thClass").text("서버구축 실무");
+						$("#7thClass").text("서버구축 실무");
+					}
+                    else if (dep == 5) {
+                        $("#1stClass").text("미적분");
+						$("#2ndClass").text("일본어");
+						$("#3rdClass").text("웹 프로그래밍");
+						$("#4thClass").text("웹 프로그래밍");
+						$("#5thClass").text("알고리즘");
+						$("#6thClass").text("알고리즘");
+						$("#7thClass").text("알고리즘");
+					}
+			}
+
+			else if (day==2) { //화
+					if (dep==1){
+						$("#1stClass").text("포르투갈어");
+						$("#2ndClass").text("포르투갈어");
+						$("#3rdClass").text("포르투갈어");
+						$("#4thClass").text("포르투갈어");
+						$("#5thClass").text("포르투갈어");
+						$("#6thClass").text("포르투갈어");
+						$("#7thClass").text("포르투갈어");
+					}
+					else if (dep==2){
+						$("#1stClass").text("독일어");
+						$("#2ndClass").text("독일어");
+						$("#3rdClass").text("독일어");
+						$("#4thClass").text("독일어");
+						$("#5thClass").text("독일어");
+						$("#6thClass").text("독일어");
+						$("#7thClass").text("독일어");
+					}
+					else if (dep==3){
+						$("#1stClass").text("자율활동(김창남)");
+						$("#2ndClass").text("서버구축 및 운영");
+						$("#3rdClass").text("서버구축 및 운영");
+						$("#4thClass").text("미적분");
+						$("#5thClass").text("자율활동");
+						$("#6thClass").text("동아리활동");
+						$("#7thClass").text("-");
+					}
+					else if (dep==4){
+						$("#1stClass").text("토익 일반");
+						$("#2ndClass").text("미적분");
+						$("#3rdClass").text("일본어");
+						$("#4thClass").text("취업 국어");
+						$("#5thClass").text("자율활동");
+						$("#6thClass").text("동아리활동");
+						$("#7thClass").text("-");
+					}
+					else if (dep==5){
+						$("#1stClass").text("정보통신망 실무");
+						$("#2ndClass").text("정보통신망 실무");
+						$("#3rdClass").text("정보 윤리");
+						$("#4thClass").text("미적분");
+						$("#5thClass").text("자율활동");
+						$("#6thClass").text("동아리활동");
+						$("#7thClass").text("-");
+					}
+			}
+
+			else if (day==3) { //수
+					if (dep==1){
+						$("#1stClass").text("아랍어");
+						$("#2ndClass").text("아랍어");
+						$("#3rdClass").text("아랍어");
+						$("#4thClass").text("아랍어");
+						$("#5thClass").text("아랍어");
+						$("#6thClass").text("아랍어");
+						$("#7thClass").text("아랍어");
+					}
+					else if (dep==2){
+						$("#1stClass").text("이탈리아어");
+						$("#2ndClass").text("이탈리아어");
+						$("#3rdClass").text("이탈리아어");
+						$("#4thClass").text("이탈리아어");
+						$("#5thClass").text("이탈리아어");
+						$("#6thClass").text("이탈리아어");
+						$("#7thClass").text("이탈리아어");
+					}
+					else if (dep==3){
+						$("#1stClass").text("취업 실무 국어");
+						$("#2ndClass").text("토익 일반");
+						$("#3rdClass").text("스포츠");
+						$("#4thClass").text("미적분");
+						$("#5thClass").text("정보통신망 실무");
+						$("#6thClass").text("정보통신망 실무");
+						$("#7thClass").text("자율활동(천현철)");
+					}
+					else if (dep==4){
+						$("#1stClass").text("알고리즘");
+						$("#2ndClass").text("알고리즘");
+						$("#3rdClass").text("알고리즘");
+						$("#4thClass").text("취업 국어");
+						$("#5thClass").text("미적분");
+						$("#6thClass").text("웹 프로그래밍");
+						$("#7thClass").text("웹 프로그래밍");
+					}
+					else if (dep==5){
+						$("#1stClass").text("정보통신망 실무");
+						$("#2ndClass").text("정보통신망 실무");
+						$("#3rdClass").text("직업 일본어");
+						$("#4thClass").text("네트워크 보안");
+						$("#5thClass").text("네트워크 보안");
+						$("#6thClass").text("서버구축 실무");
+						$("#7thClass").text("서버구축 실무");
+					}
+			}
+
+			else if (day==4) { //목
+					if (dep==1){
+						$("#1stClass").text("태국어");
+						$("#2ndClass").text("태국어");
+						$("#3rdClass").text("태국어");
+						$("#4thClass").text("태국어");
+						$("#5thClass").text("태국어");
+						$("#6thClass").text("태국어");
+						$("#7thClass").text("태국어");
+					}
+					else if (dep==2){
+						$("#1stClass").text("문화어");
+						$("#2ndClass").text("문화어");
+						$("#3rdClass").text("문화어");
+						$("#4thClass").text("문화어");
+						$("#5thClass").text("문화어");
+						$("#6thClass").text("문화어");
+						$("#7thClass").text("문화어");
+					}
+					else if (dep==3){
+						$("#1stClass").text("자바");
+						$("#2ndClass").text("자바");
+						$("#3rdClass").text("일본어");
+						$("#4thClass").text("토익 일반");
+						$("#5thClass").text("네트워크 보안");
+						$("#6thClass").text("네트워크 보안");
+						$("#7thClass").text("네트워크 보안");
+					}
+					else if (dep==4){
+						$("#1stClass").text("정보 윤리");
+						$("#2ndClass").text("네트워크 보안");
+						$("#3rdClass").text("네트워크 보안");
+						$("#4thClass").text("네트워크 보안");
+						$("#5thClass").text("직업 일본어");
+						$("#6thClass").text("스포츠");
+						$("#7thClass").text("취업 국어");
+					}
+					else if (dep==5){
+						$("#1stClass").text("일본어");
+						$("#2ndClass").text("토익 일반");
+						$("#3rdClass").text("미적분");
+						$("#4thClass").text("취업 국어");
+						$("#5thClass").text("웹 프로그래밍");
+                        $("#6thClass").text("웹 프로그래밍");
+                        $("#7thClass").text("웹 프로그래밍");
+					}
+			}
+
+			else if (day==5) { //금
+					if (dep==1){
+						$("#1stClass").text("스웨덴어");
+						$("#2ndClass").text("스웨덴어");
+						$("#3rdClass").text("스웨덴어");
+						$("#4thClass").text("스웨덴어");
+						$("#5thClass").text("스웨덴어");
+						$("#6thClass").text("스웨덴어");
+						$("#7thClass").text("스웨덴어");
+					}
+					else if (dep==2){
+						$("#1stClass").text("체코어");
+						$("#2ndClass").text("체코어");
+						$("#3rdClass").text("체코어");
+						$("#4thClass").text("체코어");
+						$("#5thClass").text("체코어");
+						$("#6thClass").text("체코어");
+						$("#7thClass").text("체코어");
+					}
+					else if (dep==3){
+						$("#1stClass").text("정보통신망 실무");
+						$("#2ndClass").text("정보통신망 실무");
+						$("#3rdClass").text("정보통신망 실무");
+						$("#4thClass").text("취업 국어");
+						$("#5thClass").text("미적분");
+						$("#6thClass").text("서버구축 및 운영");
+						$("#7thClass").text("서버구축 및 운영");
+					}
+					else if (dep==4){
+						$("#1stClass").text("미적분");
+						$("#2ndClass").text("정보통신망 실무");
+						$("#3rdClass").text("정보통신망 실무");
+						$("#4thClass").text("웹 프로그래밍");
+						$("#5thClass").text("웹 프로그래밍");
+						$("#6thClass").text("웹 프로그래밍");
+						$("#7thClass").text("일본어");
+					}
+					else if (dep==5){
+						$("#1stClass").text("서버구축 실무");
+						$("#2ndClass").text("스포츠");
+						$("#3rdClass").text("미적분");
+						$("#4thClass").text("토익 일반");
+						$("#5thClass").text("취업 국어");
+						$("#6thClass").text("취업 국어");
+						$("#7thClass").text("네트워크 보안");
+					}
+			}
+		}
+
+		$(document).ready(function(){
+
+			if($.cookie('dep') != undefined) {
+   				$('#sel option[value="' + $.cookie('dep') + '"]').prop('selected', true);
+   				tableChange(today,day,hour);
+			}
+			$("#sel").change(function(tableChangeSel){
+
+				var dep=$("#sel option:selected").val();
+				$.cookie('dep',dep,{expires:180,path:'/'});
+
+				tableChange(today,day,hour);
+			});
+		});
+
+	</script>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+            background-color: #7effef;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: 'Malgun Gothic';
+        }
+
+            .navbar li a, .navbar .navbar-brand {
+                color: #777 !important;
+            }
+
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #7fd3c8 !important;
+            background-color: #68b2a8 !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #777 !important;
+        }
+
+        .contents {
+            padding: 80px 20px;
+        }
+
+        .footer {
+            background-color: #72d1e6;
+            text-align: center;
+        }
+        .class
+        {
+            text-align:center;
+            font-size:3.3rem;
+        }
+        .hadan
+        {
+            background-color:#808080;
+        }
+        .copyright
+        {
+            color:azure;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="about.html">내일 뭐 들었지</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="todaytable.html">오늘 시간표</a></li>
+                    <li><a href="weektable.html">주간 시간표</a></li>
+                    <li><a href="weather.html">날씨</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span>테마 변경</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">나는 노말한 프렌즈에요.</a></li>
+                            <li><a href="about_theme_kemono.html">케모노 프렌즈</a></li>
+                            <li><a href="about_theme_newgame.html">뉴 게임</a></li>
+                            <li><a href="about_theme_quest.html">크루세이더 퀘스트</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="contents">
+        <div id="select">
+            <div>
+                <select name="sel" id="sel">
+                    <option>선택해주세요</option>
+                    <optgroup label="-"></optgroup>
+                    <optgroup label="3학년">
+                        <optgroup label="게임과">
+                            <option value="1">게임과 - 1반</option>
+                        </optgroup>
+                        <optgroup label="U-센서네트워크보안과">
+                            <option value="2">U센서 - 1반</option>
+                            <option value="3">U센서 - 2반</option>
+                        </optgroup>
+                        <optgroup label="해킹보안과">
+                            <option value="4">해킹과 - 1반</option>
+                            <option value="5">해킹과 - 2반</option>
+                        </optgroup>
+                    </optgroup>
+                    <optgroup label="-"></optgroup>
+                </select>
+            </div>
+        </div>
+        <div id="contents">
+            <ol id="timeTable" class="class">
+                <li id="1stClass"></li>
+                <li id="2ndClass"></li>
+                <li id="3rdClass"></li>
+                <li id="4thClass"></li>
+                <li id="5thClass"></li>
+                <li id="6thClass"></li>
+                <li id="7thClass"></li>
+            </ol>
+        </div>
+        <div class="text-center">
+            <div>
+                <h4>특수 기능 : 아래의 버튼으로 각 과목의 선생님 성함을 on/off 할 수 있습니다.</h4>
+                <h5 style="text-align:center">아래의 과목 명과 선생님 성함은 해킹보안과 기준입니다. 개발자가 해킹과거든요.</h5>
+                <button class="btn btn-default" id="hide">숨기기</button>
+                <button class="btn btn-default" id="show">보이기</button>
+                <div class="text-center">
+                    <p>미적분 : 서승준</p>
+                    <p>일본어,직업 일본어 : 천현철</p>
+                    <p>웹 프로그래밍 : 김소연 B</p>
+                    <p>알고리즘 : 김상현</p>
+                    <p>정보통신망 실무 : 연정흠</p>
+                    <p>토익 일반 : 가경철</p>
+                    <p>취업 국어 : 조남진</p>
+                    <p>스포츠 : 최은석</p>
+                    <p>네트워크 보안 : 김기중</p>
+                    <p>정보 윤리 : 박정재</p>
+                    <p>서버구축 실무 : 김창남</p>
+                </div>
+                <script>
+                    $("#hide").click(function () {
+                        $("p:last-child").hide("fast", function () { $(this).prev().hide("fast", arguments.callee); });
+                    }); $("#show").click(function () { $("p").show(2000); });
+                </script>
+            </div>
+        </div>
+    </div>
+    <div id="footer-1">
+        <div align="center">17시가 될 때마다 다음 시간표로 갱신됩니다.</div>
+    </div>
+    <footer class="container-fluid text-center hadan">
+        <div><img width="200" src="./img/환상향_하양.png" /></div>
+        <div class="copyright">copyright@gensokyo, The Solidarity of Kim-Sang-Gueon, #AirKORAIL all rights reserved </div>
+    </footer>
+        
+</body>
+</html>

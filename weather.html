@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+            background-color: #7effef;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: 'Malgun Gothic';
+        }
+
+            .navbar li a, .navbar .navbar-brand {
+                color: #777 !important;
+            }
+
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #7fd3c8 !important;
+            background-color: #68b2a8 !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #777 !important;
+        }
+
+        .contents {
+            padding: 37px 60px;
+        }
+
+        .footer {
+            background-color: #72d1e6;
+            text-align: center;
+        }
+        .cirno
+        {
+            background-color:#e2e2e2;
+        }
+        .cirno_1
+        {   
+            padding:2px 110px;
+        }
+    </style>
+    <title>내일 뭐 들었지?</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="about.html">내일 뭐 들었지</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="todaytable.html">오늘 시간표</a></li>
+                    <li><a href="weektable.html">주간 시간표</a></li>
+                    <li><a href="weather.html">날씨</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span>테마 변경</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">나는 노말한 프렌즈에요.</a></li>
+                            <li><a href="about_theme_kemono.html">케모노 프렌즈</a></li>
+                            <li><a href="about_theme_newgame.html">뉴 게임</a></li>
+                            <li><a href="about_theme_quest.html">크루세이더 퀘스트</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="contents">
+        <div class="cirno"><h2>오늘의 날씨</h2></div>
+        <iframe src="https://www.youtube.com/embed/Z8uiJAme8Ss" frameborder="0" allowfullscreen style="max-width:initial; max-height:initial; width:100%; height:100%;"></iframe>
+        <h4>영상이 재생되지 않을 경우 <strong>youtube앱으로 보기</strong>를 눌러주세요.</h4>
+        <div class="cirno"><h2>주간 날씨</h2></div>
+    </div>
+
+    <div class="cirno_1">
+        <table cellpadding=0 cellspacing=0 width=211 style="border:solid 1px #20c4fe;font-family:Arial;font-size:12px;background-color:#20fef4"><tr><td><table width=100% cellpadding=0 cellspacing=0><tr><td width=8 height=30 background="http://rp5.ua/informer/htmlinfa/topshl.png" bgcolor=#20c4fe> </td><td width=* align=center background="http://rp5.ua/informer/htmlinfa/topsh.png" bgcolor=#20c4fe><a style="color:#ffffff; font-family:Arial;font-size: 12px;" href="http://rp5.ua/12514/ko"><b>서울특별시</b></a></td><td width=8 height=30 background="http://rp5.ua/informer/htmlinfa/topshr.png" bgcolor=#20c4fe> </td></tr></table></td></tr><tr><td valign=top style="padding:0;"><iframe src="http://rp5.ua/htmla.php?id=12514&lang=ko&um=00000&bg=%2320fef4&ft=%23ffffff&fc=%2320c4fe&c=%23000000&f=Arial&s=12&sc=3" width=100% height=207 frameborder=0 scrolling=no style="margin:0;"></iframe></td></tr></table>
+    </div>
+    <footer class="container-fluid text-center">
+        <p><img width="200" src="./img/환상향_하양.png" /></p>
+         <div class="copyright">copyright@gensokyo, The Solidarity of Kim-Sang-Gueon, #AirKORAIL all rights reserved </div>
+    </footer>
+</body>
+</html>
