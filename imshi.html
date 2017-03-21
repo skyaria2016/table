@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+                var filter = "win16|win32|win64|mac|macintel";
+
+                if (navigator.platform  ) {
+                        if (filter.indexOf(navigator.platform.toLowerCase()) < 0) {
+                                location.href = "about_theme_kemono.html"; //모바일 페이지 경로
+                        } else {
+                                location.href = "timetable.html"; //PC 페이지 경로
+                        }
+        }
+        alert("준비중입니다!");
+        location.href = 'about.html';
+    </script>
+    </head>
+    <body>
+    </body>
+    </html>
