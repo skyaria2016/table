@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript">
+
+		function tableChangeWeekly(){
+			var dep=$("#sel option:selected").val();
+			if(dep==1){
+				$("#weeklyTable").attr("src","img/GAME1.png");
+			}
+			else if(dep==2){
+				$("#weeklyTable").attr("src","img/USN1.png");
+			}
+			else if(dep==3){
+                $("#weeklyTable").attr("src","img_theme/newgame/USN2_newgame.png");
+			}
+			else if(dep==4){
+                $("#weeklyTable").attr("src","img_theme/newgame/HK1_newgame.png");
+			}
+			else if(dep==5){
+				$("#weeklyTable").attr("src","img_theme/newgame/HK2_newgame.png");
+			}
+			else{
+				$("#weeklyTable").attr("src","img/null.png");
+			}
+		}
+		$(document).ready(function(){
+
+			if($.cookie('depWeek') != undefined) {
+   				$('#sel option[value="' + $.cookie('depWeek') + '"]').prop('selected', true);
+   				tableChangeWeekly();
+			}
+			$("#sel").change(function(tableChSelWeek){
+
+				var dep=$("#sel option:selected").val();
+				$.cookie('depWeek',dep,{expires:180,path:'/'});
+				tableChangeWeekly();
+			});
+		});
+	</script>
+    <style>
+        .navbar {
+            margin-bottom: 0;
+            background-color: ;
+            z-index: 9999;
+            border: 0;
+            opacity: 0.5 !important;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: 'Malgun Gothic';
+        }
+
+            .navbar li a, .navbar .navbar-brand {
+                color: #777 !important;
+            }
+
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #7fd3c8 !important;
+            background-color: #FFFFF6 !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #777 !important;
+        }
+
+        .contents {
+            padding: 55px 0px;
+        }
+
+        .footer {
+            background-color: #72d1e6;
+            text-align: center;
+        }
+        .cirno
+        {
+            padding:3px 0px;
+        }
+		.background
+        {
+            position:relative;
+            z-index:1;
+        }
+        .background:after 
+        {
+            background-image:url('./img_theme/newgame/newgame.png');
+            top:0;
+            left:0;
+            position:absolute;
+            background-size:inherit;
+            opacity:0.5!important;
+            filter:alpha(opacity=50);
+            z-index:-1;
+            content:"";
+            width:100%;
+            height:100%;
+        }
+    </style>
+
+	<title>주간 시간표</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="about_theme_newgame.html">내일 뭐 들었지</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="todaytable_newgame.html">오늘 시간표</a></li>
+                    <li><a href="weektable_newgame.html">주간 시간표</a></li>
+                    <li><a href="weather_newgame.html">날씨</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span>테마 변경</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">나는 노말한 프렌즈에요.</a></li>
+                            <li><a href="about_theme_kemono.html">케모노 프렌즈</a></li>
+                            <li><a href="about_theme_newgame.html">뉴 게임</a></li>
+                            <li><a href="imshi.html">크루세이더 퀘스트</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+		<div class="background">
+    <div class="contents">
+	<div id="select">
+        <p>
+            <select name="sel" id="sel">
+                <option>선택해주세요</option>
+                <optgroup label="-"></optgroup>
+                <optgroup label="3학년">
+                    <optgroup label="게임과">
+                        <option value="1">게임과 - 1반</option>
+                    </optgroup>
+                    <optgroup label="U-센서네트워크보안과">
+                        <option value="2">U센서 - 1반</option>
+                        <option value="3">U센서 - 2반</option>
+                    </optgroup>
+                    <optgroup label="해킹보안과">
+                        <option value="4">해킹과 - 1반</option>
+                        <option value="5">해킹과 - 2반</option>
+                    </optgroup>
+                </optgroup>
+                <optgroup label="-"></optgroup>
+            </select>
+        </p>
+	</div>
+	<div id="contents" align="center">
+		<img src="img/null.png" width="500" id="weeklyTable" style="max-width:500px; max-height:initial; width:100%; height:100%;">
+	</div>
+        <h4 style="text-align:center">USN보안과 1반과 게임과 1반은 데이터 없음으로 반영되어있지 않습니다.</h4>
+        <h5 style="text-align:center">원하신다면 시간표 데이터를 보내주세요 : skyaria2017@gmail.com</h5>
+        </div>
+        <div class="cirno">
+            
+        </div>
+    <div id="footer-1">
+        <p align="center"><img width="500" src="./img/갱신.png" style="max-width:500px; max-height:initial; width:100%; height:100%;"/></p>
+    </div>
+    <footer class="container-fluid text-center">
+        <p><img width="200" src="./img_theme/kemono/환상향_하양_케모노.png" /></p>
+        <div class="copyright">copyright@gensokyo, The Solidarity of Kim-Sang-Gueon, #AirKORAIL all rights reserved </div>
+    </footer>
+	</div>
+</body>
+</html>
